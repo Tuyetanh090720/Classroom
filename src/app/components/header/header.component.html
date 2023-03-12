@@ -1,0 +1,130 @@
+<header>
+    <div class="header-bar">
+        <div>
+            <div class="row header-top-bar">
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <div class="top-left-bar">
+                        <div class="nav-bar-icon" id="nav-bar-icon" (clickOutside)="clickedOutsideMenu($event)" (click)=" showMainMenu() ">
+                            <a>
+                                <i class="fa fa-bars "></i>
+                            </a>
+                        </div>
+                        <div class="logo-google ">
+                            <a href=" ">
+                                <img src="assets/images/logo-google.png " alt="Google ">
+                            </a>
+                            <span>Classroom</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 ">
+                    <div class="top-menu-bar " *ngIf="classDetail">
+                        <nav class="mean-nav ">
+                            <ul>
+                                <li class="active ">
+                                    <a href=" ">Stream</a>
+                                </li>
+                                <li>
+                                    <a href=" ">Classwork</a>
+                                </li>
+                                <li>
+                                    <a href=" ">People</a>
+                                </li>
+                                <li>
+                                    <a href=" ">Grades</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 ">
+                    <div class="top-right-bar ">
+                        <div id="creation" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideTapCreation($event)">
+                            <a class="btn btn-plus " data-toggle="collapse" href="#collapse1tc" aria-expanded="false" aria-controls="collapse1tc">
+                                <i class="fa fa-plus "></i>
+                            </a>
+                            <div class="popup-create-class">
+                                <div class="collapse" id="collapse1tc" data-parent="#creation">
+                                    <div class="btnn" (click)="showTapCreate()">
+                                        <a data-toggle="collapse" href="#collapse1c" aria-expanded="false" aria-controls="collapse1c">
+                                      Create class
+                                    </a>
+                                    </div>
+                                    <div class="btnn">
+                                        <a>
+                                        Join class
+                                      </a>
+                                    </div>
+                                </div>
+                                <div class="collapse" id="collapse1c" data-parent="#collapse1tc">
+                                    <app-class-creation></app-class-creation>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn btn-setting " *ngIf="classDetail ">
+                            <i class="fa fa-cog "></i>
+                        </div>
+                        <div class="btn btn-grid ">
+                            <i class="fa fa-th "></i>
+                        </div>
+                        <div class="img-avatar ">
+                            <img src="/assets/images/avatar.jpg " alt="account ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-menu " *ngIf="menu ">
+        <div class="ne-main-menu ">
+            <nav>
+                <ul>
+                    <li>
+                        <a href=" ">
+                            <i class="fa fa-home "></i>
+                            <span>Classes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=" ">
+                            <i class="fas fa-calendar "></i>
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="divide "></div>
+                    </li>
+                    <li>
+                        <a href=" ">
+                            <i class="fas fa-folder-minus "></i>
+                            <span>To review</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=" " class="avatar-class-area ">
+                            <div class="avatar-class ">
+                                <img src="/assets/images/icon-class.png " alt=" ">
+                            </div>
+                            <span>Math</span>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="divide "></div>
+                    </li>
+                    <li>
+                        <a href=" ">
+                            <i class="fas fa-archive "></i>
+                            <span>Archived classes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=" ">
+                            <i class="fa fa-cog "></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

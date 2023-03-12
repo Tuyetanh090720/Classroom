@@ -1,0 +1,96 @@
+.class-edition {
+    position: fixed;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    min-width: 18rem;
+    max-width: 35rem;
+    width: 100%;
+    z-index: 10000;
+}
+
+.popup-edition-block {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 1px 0 20px -2px #888;
+    z-index: 10000;
+    outline: 0;
+}
+
+.popup-edition-block .popup-edition {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 550;
+    letter-spacing: .1px;
+    line-height: 24px;
+    margin: 18px 24px 16px 24px;
+}
+
+.popup-edition-block .popup-edition .input-block {
+    width: 100%;
+    margin-bottom: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, .549);
+    background-color: rgb(241, 243, 244);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 15px;
+}
+
+.popup-edition-block .popup-edition .input-block:focus {
+    border-bottom: 1px solid rgba(0, 0, 0, .549);
+}
+
+.popup-edition-block .popup-edition .input-block label {
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .1px;
+    color: rgb(95, 99, 104);
+}
+
+.popup-edition-block .popup-edition .input-block input {
+    border: none;
+    width: 100%;
+    color: rgb(60, 64, 67);
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    letter-spacing: .00625em;
+    font-weight: 400;
+    background-color: rgb(241, 243, 244);
+}
+
+.popup-edition-block .popup-edition .input-block input:focus {
+    outline: none;
+}
+
+.popup-edition-block .popup-edition .btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.popup-edition-block .popup-edition .btn button {
+    color: #5f6368;
+    text-decoration: none;
+    padding: 10px 10px;
+    border: none;
+    background-color: transparent;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.popup-edition-block .popup-edition .btn button:hover {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.popup-edition-block .popup-edition .btn button a {
+    color: #5f6368;
+    text-decoration: none;
+}
