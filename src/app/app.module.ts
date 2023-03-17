@@ -24,7 +24,8 @@ import { PeopleComponent } from './components/class-detail-management/people/peo
 import { ClassworkComponent } from './components/class-detail-management/classwork/classwork.component';
 import { AssignmentCreationComponent } from './components/assignment-creation/assignment-creation.component';
 import { AsignmentEditionComponent } from './components/asignment-edition/asignment-edition.component';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog,MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ClassCommentComponent } from './components/class-detail-management/class-comment/class-comment.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
     LoginComponent,
     ClassManagementComponent,
     ClassDetailManagementComponent,
+    ClassCommentComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +55,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
     NgbModule,
     BrowserAnimationsModule,
     NgMultiSelectDropDownModule.forRoot(),
+    MatDialogModule,
   ],
   providers: [DataService,],
   bootstrap: [AppComponent]

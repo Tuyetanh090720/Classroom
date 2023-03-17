@@ -1,6 +1,6 @@
 import { Component, OnInit, Renderer2, ElementRef, HostListener } from '@angular/core';
-import {DataService} from '../../data.service';
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { HeaderComponent } from '../../header/header.component';
 
 @Component({
   selector: 'app-class-join',
@@ -9,16 +9,13 @@ import {DataService} from '../../data.service';
 })
 export class ClassJoinComponent implements OnInit {
 
-  constructor(private renderer: Renderer2, private el: ElementRef, private data: DataService) { }
+  constructor(private renderer: Renderer2, private el: ElementRef, public dialogRef: MatDialogRef<HeaderComponent>) { }
 
   ngOnInit(): void {
   }
 
-  tapJoin: boolean
-
-  closeTapJoin() {
-    this.tapJoin = false
-    this.data.tapJoinSource.next(this.tapJoin);
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

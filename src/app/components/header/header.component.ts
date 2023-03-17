@@ -3,6 +3,8 @@ import {DataService} from '../data.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ClassEditionComponent } from '../class-management/class-edition/class-edition.component';
 import { ClassCreationComponent } from '../class-management/class-creation/class-creation.component';
+import { ClassJoinComponent } from '../class-management/class-join/class-join.component';
+import { BooleanInput } from '@angular/cdk/coercion';
 
 @Component({
   selector: 'app-header',
@@ -16,21 +18,10 @@ export class HeaderComponent implements OnInit {
   classCreation: boolean
   popupCreationQuestion: boolean
   popupCreation: boolean
-  classDetail:boolean
-  tapJoin: boolean
-
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ClassCreationComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
+  classDetail:BooleanInput
 
   ngOnInit(): void {
     this.data.currentClassDetail.subscribe(classDetail => this.classDetail = classDetail);
-    this.data.currentTapJoin.subscribe(tapJoin => this.tapJoin = tapJoin);
   }
 
   menu:boolean = false
@@ -52,24 +43,13 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  clickedOutsideBtnCreation(e: Event){
-    const show = this.el.nativeElement.querySelector(".collapse1tc.collapse.show")
-
-    if(show){
-      show.classList.remove('show');
-      console.log("OutsideTapCreation")
-    }
+  openClassCreation(): void {
+    const dialogRef = this.dialog.open(ClassCreationComponent);
+    dialogRef.afterClosed().subscribe(result => {});
   }
 
-  @HostListener('document:click', ['$event'])
-  click(event:any) {
-    if(this.tapJoin == false) {
-      const show = this.el.nativeElement.querySelector(".collapse.show")
-
-      if(show){
-        show.classList.remove('show');
-      }
-    }
+  openClassJoin(): void {
+    const dialogRef = this.dialog.open(ClassJoinComponent);
   }
 
 }

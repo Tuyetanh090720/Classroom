@@ -54,27 +54,14 @@
                             </a>
                             <div class="popup-create-class">
                                 <div class="collapse collapse1tc" id="collapse1tc" data-parent="#creation">
-                                    <!-- <div class="btnn">
-                                        <a data-toggle="collapse" href="#collapse1c" aria-expanded="false" aria-controls="collapse1c">
-                                          Create class
-                                        </a>
-                                    </div> -->
-                                    <div class="btnn">
-                                        <a>Creation</a>
+                                    <div class="btnn" (click)="openClassCreation()">
+                                        <a>Create class</a>
                                     </div>
-                                    <div class="btnn">
-                                        <a data-toggle="collapse" href="#collapse1j" aria-expanded="false" aria-controls="collapse1j">
-                                          Join class
-                                        </a>
+                                    <div class="btnn" (click)="openClassJoin()">
+                                        <a>Join class</a>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="collapse" id="collapse1c" data-parent="#collapse1tc">
-                                <app-class-creation></app-class-creation>
-                            </div>
-                            <div class="collapse" id="collapse1j" data-parent="#collapse1tc">
-                                <app-class-join></app-class-join>
-                            </div> -->
                         </div>
                         <div class="btn btn-setting " *ngIf="classDetail ">
                             <i class="fa fa-cog "></i>

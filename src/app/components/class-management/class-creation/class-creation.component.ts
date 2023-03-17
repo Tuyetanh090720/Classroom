@@ -1,5 +1,8 @@
-import { Component, OnInit, Input, ElementRef, HostListener  } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, HostListener, Inject  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Head } from 'rxjs';
+import { HeaderComponent } from '../../header/header.component';
 
 @Component({
   selector: 'app-class-creation',
@@ -8,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ClassCreationComponent implements OnInit {
 
-  constructor(private el: ElementRef) {  }
+  constructor(private el: ElementRef, public dialogRef: MatDialogRef<HeaderComponent>) {  }
   classCreation: boolean
   popupCreationQuestion: boolean = true
   popupCreation: boolean = false
@@ -24,6 +27,11 @@ export class ClassCreationComponent implements OnInit {
 
     const popup= this.el.nativeElement.querySelector(".popup-creation-question")
     popup.style.display = "none"
+  }
+
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

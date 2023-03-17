@@ -13,15 +13,14 @@ import { PeopleComponent } from './components/class-detail-management/people/peo
 import { ClassworkComponent } from './components/class-detail-management/classwork/classwork.component';
 import { AssignmentCreationComponent } from './components/assignment-creation/assignment-creation.component';
 import { AsignmentEditionComponent } from './components/asignment-edition/asignment-edition.component';
+import { ClassCommentComponent } from './components/class-detail-management/class-comment/class-comment.component';
+
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/class-list', pathMatch: 'full' },
+
   { path: 'class-list', component: ListClassComponent },
-  { path: 'class-creation', component: ClassCreationComponent },
-  { path: 'class-join', component: ClassJoinComponent },
-  { path: 'class-edition', component: ClassEditionComponent },
-  { path: 'class-edition', component: ClassEditionComponent },
   { path: 'class-detail/:id', component: ClassDetailManagementComponent },
   { path: 'class-detail/people/:id', component: PeopleComponent },
   { path: 'class-detail/grades/:id', component: GradesComponent },

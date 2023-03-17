@@ -1,5 +1,8 @@
 import { Component, OnInit, ElementRef,HostListener } from '@angular/core';
 import {DataService} from '../../data.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ClassCommentComponent } from '../class-comment/class-comment.component';
+
 
 @Component({
   selector: 'app-classwork',
@@ -8,18 +11,18 @@ import {DataService} from '../../data.service';
 })
 export class ClassworkComponent implements OnInit {
 
-  constructor(private data: DataService,  private el: ElementRef) { }
+  constructor(private data: DataService,  private el: ElementRef, public dialog: MatDialog) { }
 
   classDetail: boolean = true
-  tapAssignmentCreation: boolean
-  tapAssignmentEdition: boolean
 
 
   ngOnInit(): void {
     this.data.classDetailSource.next(this.classDetail)
-    this.data.currentAssignmentCreation.subscribe(tapAssignmentCreation => this.tapAssignmentCreation = tapAssignmentCreation);
-    this.data.currentAssignmentEdition.subscribe(tapAssignmentEdition => this.tapAssignmentEdition = tapAssignmentEdition);
+  }
 
+  openClassComment(): void {
+    const dialogRef = this.dialog.open(ClassCommentComponent);
+    dialogRef.afterClosed().subscribe(result => {});
   }
 
   clickedOutsideAssignmentOptionBlock(e: Event){
@@ -27,14 +30,6 @@ export class ClassworkComponent implements OnInit {
 
     if(assignmentOptionBlock){
       assignmentOptionBlock.classList.remove('show');
-    }
-  }
-
-  clickedOutsideAssignmentCreationBlock(e: Event){
-    const assignmentCreationBlock = this.el.nativeElement.querySelector(".assignment-creation-block.collapse.show")
-
-    if(assignmentCreationBlock){
-      assignmentCreationBlock.classList.remove('show');
     }
   }
 
@@ -51,25 +46,6 @@ export class ClassworkComponent implements OnInit {
 
     if(show){
       show.classList.remove('show');
-    }
-  }
-
-  @HostListener('document:click', ['$event'])
-  click(event:any) {
-    if(this.tapAssignmentCreation == false) {
-      const show = this.el.nativeElement.querySelector(".assignment-creation-block.collapse.show")
-
-      if(show){
-        show.classList.remove('show');
-      }
-    }
-
-    if(this.tapAssignmentEdition == false) {
-      const show = this.el.nativeElement.querySelector(".assignment-edition-block.collapse.show")
-
-      if(show){
-        show.classList.remove('show');
-      }
     }
   }
 }
