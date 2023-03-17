@@ -14,11 +14,13 @@ export class PeopleComponent implements OnInit {
   masterSelected:boolean;
   checklist:any;
   checkedList:any;
+  activeState = "People"
+  role: string
 
 
   constructor(private data: DataService){
-      this.masterSelected = false;
-      this.checklist = [
+    this.masterSelected = false;
+    this.checklist = [
         {id:1,value:'Elenor Anderson',isSelected:false},
         {id:2,value:'Caden Kunze',isSelected:true},
         {id:3,value:'Ms. Hortense Zulauf',isSelected:true},
@@ -28,7 +30,11 @@ export class PeopleComponent implements OnInit {
         {id:7,value:'Aracely Renner DVM',isSelected:false},
         {id:8,value:'Genoveva Luettgen',isSelected:false}
       ];
-      this.getCheckedItemList();
+    this.getCheckedItemList();
+
+    this.data.activeStateSource.next(this.activeState)
+    this.data.currentRole.subscribe(role => this.role = role);
+
   }
 
   ngOnInit(): void {

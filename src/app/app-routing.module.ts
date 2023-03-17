@@ -14,12 +14,14 @@ import { ClassworkComponent } from './components/class-detail-management/classwo
 import { AssignmentCreationComponent } from './components/assignment-creation/assignment-creation.component';
 import { AsignmentEditionComponent } from './components/asignment-edition/asignment-edition.component';
 import { ClassCommentComponent } from './components/class-detail-management/class-comment/class-comment.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/class-list', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 
+  { path: 'login', component: LoginComponent },
   { path: 'class-list', component: ListClassComponent },
   { path: 'class-detail/:id', component: ClassDetailManagementComponent },
   { path: 'class-detail/people/:id', component: PeopleComponent },

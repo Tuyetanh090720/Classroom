@@ -27,10 +27,15 @@
                                 <i class="fa fa-ellipsis-v "></i>
                             </a>
                             <div class="direct-class-block ">
-                                <div class="btnn collapse collapse1te" id="collapse1te" data-parent="#accordion">
+                                <div class="btnn collapse collapse1te" id="collapse1te" data-parent="#accordion" *ngIf="(role == 'teacher')">
                                     <a (click)="openClassEdition()">
                                       Edit
                                     </a>
+                                </div>
+                                <div class="btnn collapse collapse1te" id="collapse1te" data-parent="#accordion" *ngIf="(role === 'student')">
+                                    <a (click)="openClassEdition()">
+                                  Unenroll
+                                </a>
                                 </div>
                             </div>
                         </div>
@@ -68,9 +73,14 @@
                                 <i class="fa fa-ellipsis-v "></i>
                             </a>
                             <div class="direct-class-block ">
-                                <div class="btnn collapse collapse2te" id="collapse2te" data-parent="#accordion">
+                                <div class="btnn collapse collapse2te" id="collapse2te" data-parent="#accordion" *ngIf="(role == 'teacher')">
                                     <a (click)="openClassEdition()">
-                                    Edit
+                                      Edit
+                                    </a>
+                                </div>
+                                <div class="btnn collapse collapse2te" id="collapse2te" data-parent="#accordion" *ngIf="(role === 'student')">
+                                    <a (click)="openClassEdition()">
+                                    Unenroll
                                   </a>
                                 </div>
                             </div>

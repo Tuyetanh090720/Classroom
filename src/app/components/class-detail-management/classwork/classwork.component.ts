@@ -15,9 +15,18 @@ export class ClassworkComponent implements OnInit {
 
   classDetail: boolean = true
 
+  activeState = "Classwork"
+
+  role: string
+
 
   ngOnInit(): void {
     this.data.classDetailSource.next(this.classDetail)
+
+    this.data.activeStateSource.next(this.activeState)
+
+    this.data.currentRole.subscribe(role => this.role = role);
+
   }
 
   openClassComment(): void {

@@ -93,11 +93,11 @@
     display: inline-block;
     cursor: pointer;
     background: white;
-    padding: 20px 10px;
 }
 
-.header-bar .header-top-bar .top-menu-bar nav ul li.active {
+.header-bar .header-top-bar .top-menu-bar nav ul li a.active {
     border-bottom: rgb(32, 33, 36) solid 2px;
+    background-color: rgb(224, 224, 224, 0.4);
 }
 
 .header-bar .header-top-bar .top-menu-bar nav>ul>li:hover {
@@ -117,7 +117,7 @@
     font-weight: 500;
     color: rgb(32, 33, 36);
     text-transform: none;
-    padding: 0px 10px;
+    padding: 20px 10px;
 }
 
 .header-bar .header-top-bar .top-right-bar {

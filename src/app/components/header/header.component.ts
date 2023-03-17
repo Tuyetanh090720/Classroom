@@ -15,15 +15,23 @@ export class HeaderComponent implements OnInit {
 
   constructor(private renderer: Renderer2, private el: ElementRef, private data: DataService,public dialog: MatDialog) { }
 
-  classCreation: boolean
-  popupCreationQuestion: boolean
-  popupCreation: boolean
   classDetail:BooleanInput
+
+  activeState:string;
+
+  role: string
 
   ngOnInit(): void {
     this.data.currentClassDetail.subscribe(classDetail => this.classDetail = classDetail);
+
+    this.data.currentActiveState.subscribe(activeState => this.activeState = activeState);
+
+    this.data.currentRole.subscribe(role => this.role = role);
+
+    console.log(this.role)
   }
 
+  // show hide menu
   menu:boolean = false
 
   showMainMenu() {
@@ -34,14 +42,23 @@ export class HeaderComponent implements OnInit {
     this.menu = false
   }
 
+  // tap bar active
+  setStateAsActive(state:any) {
+    this.activeState = state;
+    console.log(this.activeState)
+  }
+
+  // hide collapse
+
   clickedOutsideTapCreation(e: Event){
     const show = this.el.nativeElement.querySelector(".collapse1tc.collapse.show")
 
     if(show){
       show.classList.remove('show');
-      console.log("OutsideTapCreation")
     }
   }
+
+  // show hide popup
 
   openClassCreation(): void {
     const dialogRef = this.dialog.open(ClassCreationComponent);

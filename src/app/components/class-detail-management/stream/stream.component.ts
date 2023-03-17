@@ -15,6 +15,9 @@ export class StreamComponent implements OnInit {
   constructor(private data: DataService, private el: ElementRef, public dialog: MatDialog){}
 
   classDetail: boolean = true
+  activeState = "Stream"
+  role: string
+
 
   dropdownList: string[];
   dropdownSettings:IDropdownSettings={};
@@ -22,6 +25,11 @@ export class StreamComponent implements OnInit {
     this.data.classDetailSource.next(this.classDetail)
 
     this.dropdownList = ['Lớp 1', 'Lớp 2', 'Lớp 3'];
+
+    this.data.activeStateSource.next(this.activeState)
+
+    this.data.currentRole.subscribe(role => this.role = role);
+
   }
 
   openClassComment(): void {

@@ -10,10 +10,12 @@ import { ClassEditionComponent } from '../class-edition/class-edition.component'
 })
 export class ListClassComponent implements OnInit {
 
-  constructor(private renderer: Renderer2, private el: ElementRef,  public dialog: MatDialog) { }
+  constructor(private data: DataService, private renderer: Renderer2, private el: ElementRef,  public dialog: MatDialog) { }
 
+  role: string
 
   ngOnInit(): void {
+    this.data.currentRole.subscribe(role => this.role = role);
   }
 
   clickedOutsideTapEdition(e: Event) {

@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="col-lg-9 col-md-12 col-sm-12">
-            <div class="btn-btn-create" id="assigment-option" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentOptionBlock($event)">
+            <div class="btn-btn-create" id="assigment-option" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentOptionBlock($event)" *ngIf="(role == 'teacher')">
                 <a data-toggle="collapse" href="#collapse1ao" aria-expanded="false" aria-controls="collapse1ao">
                     <i class="fas fa-plus"></i>
                     <span>Create</span>
@@ -45,13 +45,16 @@
                             <span class="span6"> Posted Mar 7</span>
                         </div>
                     </a>
-                    <div class="btn-option-edit" id="btn-option-edit" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentEditionBlock($event)">
+                    <div class="btn-option-edit" id="btn-option-edit" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentEditionBlock($event)" *ngIf="(role == 'teacher')">
                         <a data-toggle="collapse" href="#collapse1te" aria-expanded="false" aria-controls="collapse1te">
                             <i class="fas fa-ellipsis-v"></i>
                         </a>
                         <div class="tap-edition collapse" id="collapse1te" data-parent="#btn-option-edit">
                             <a [routerLink]="['/class-detail/classwork/:id/edition']" routerLinkActive="active">
                                 <span>Edit</span>
+                            </a>
+                            <a>
+                                <span>Delete</span>
                             </a>
                         </div>
                     </div>
@@ -85,6 +88,175 @@
                     </div>
                 </div>
             </div>
+            <div class="assigment" id="assigment" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentDetail($event)">
+                <div class="assignment-header">
+                    <a data-toggle="collapse" href="#collapse2ad" aria-expanded="false" aria-controls="collapse2ad">
+                        <div class="assignment-name">
+                            <div class="assignment-icon">
+                                <i class="far fa-file-alt"></i>
+                            </div>
+                            <span>asdasdasdad</span>
+                        </div>
+                        <div class="right-block">
+                            <span class="span6"> Posted Mar 7</span>
+                        </div>
+                    </a>
+                    <div class="btn-option-edit" id="btn-option-edit" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentEditionBlock($event)" *ngIf="(role == 'teacher')">
+                        <a data-toggle="collapse" href="#collapse2te" aria-expanded="false" aria-controls="collapse2te">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="tap-edition collapse" id="collapse2te" data-parent="#btn-option-edit">
+                            <a [routerLink]="['/class-detail/classwork/:id/edition']" routerLinkActive="active">
+                                <span>Edit</span>
+                            </a>
+                            <a>
+                                <span>Delete</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="assignment-detail collapse" id="collapse2ad" data-parent="#assigment">
+                    <div class="assignment-detail-body">
+                        <div class="post-date">
+                            Posted Mar 7
+                        </div>
+                        <div class="assignment-content">
+                            <div>asdsdfwfuwh</div>
+                            <div class="turnin-assign">
+                                <div class="turnin divide">
+                                    <span class="span1">0</span>
+                                    <br>
+                                    <span>Turned in</span>
+                                </div>
+                                <div class="assign divide">
+                                    <span class="span1">1</span>
+                                    <br>
+                                    <span>Assigned</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="assignment-comment" id="comment" role="tablist" aria-multiselectable="true">
+                        <a (click)="openClassComment()">1 class comment</a>
+                    </div>
+                    <div class="assignment-detail-footer">
+                        <a>View assignment</a>
+                    </div>
+                </div>
+            </div>
+            <div class="assigment" id="assigment" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentDetail($event)">
+                <div class="assignment-header">
+                    <a data-toggle="collapse" href="#collapse3ad" aria-expanded="false" aria-controls="collapse3ad">
+                        <div class="assignment-name">
+                            <div class="assignment-icon">
+                                <i class="far fa-file-alt"></i>
+                            </div>
+                            <span>asdasdasdad</span>
+                        </div>
+                        <div class="right-block">
+                            <span class="span6"> Posted Mar 7</span>
+                        </div>
+                    </a>
+                    <div class="btn-option-edit" id="btn-option-edit" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentEditionBlock($event)" *ngIf="(role == 'teacher')">
+                        <a data-toggle="collapse" href="#collapse3te" aria-expanded="false" aria-controls="collapse3te">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="tap-edition collapse" id="collapse3te" data-parent="#btn-option-edit">
+                            <a [routerLink]="['/class-detail/classwork/:id/edition']" routerLinkActive="active">
+                                <span>Edit</span>
+                            </a>
+                            <a>
+                                <span>Delete</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="assignment-detail collapse" id="collapse3ad" data-parent="#assigment">
+                    <div class="assignment-detail-body">
+                        <div class="post-date">
+                            Posted Mar 7
+                        </div>
+                        <div class="assignment-content">
+                            <div>asdsdfwfuwh</div>
+                            <div class="turnin-assign">
+                                <div class="turnin divide">
+                                    <span class="span1">0</span>
+                                    <br>
+                                    <span>Turned in</span>
+                                </div>
+                                <div class="assign divide">
+                                    <span class="span1">1</span>
+                                    <br>
+                                    <span>Assigned</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="assignment-comment" id="comment" role="tablist" aria-multiselectable="true">
+                        <a (click)="openClassComment()">1 class comment</a>
+                    </div>
+                    <div class="assignment-detail-footer">
+                        <a>View assignment</a>
+                    </div>
+                </div>
+            </div>
+            <div class="assigment" id="assigment" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentDetail($event)">
+                <div class="assignment-header">
+                    <a data-toggle="collapse" href="#collapse4ad" aria-expanded="false" aria-controls="collapse4ad">
+                        <div class="assignment-name">
+                            <div class="assignment-icon">
+                                <i class="far fa-file-alt"></i>
+                            </div>
+                            <span>asdasdasdad</span>
+                        </div>
+                        <div class="right-block">
+                            <span class="span6"> Posted Mar 7</span>
+                        </div>
+                    </a>
+                    <div class="btn-option-edit" id="btn-option-edit" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentEditionBlock($event)" *ngIf="(role == 'teacher')">
+                        <a data-toggle="collapse" href="#collapse4te" aria-expanded="false" aria-controls="collapse4te">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="tap-edition collapse" id="collapse4te" data-parent="#btn-option-edit">
+                            <a [routerLink]="['/class-detail/classwork/:id/edition']" routerLinkActive="active">
+                                <span>Edit</span>
+                            </a>
+                            <a>
+                                <span>Delete</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="assignment-detail collapse" id="collapse4ad" data-parent="#assigment">
+                    <div class="assignment-detail-body">
+                        <div class="post-date">
+                            Posted Mar 7
+                        </div>
+                        <div class="assignment-content">
+                            <div>asdsdfwfuwh</div>
+                            <div class="turnin-assign">
+                                <div class="turnin divide">
+                                    <span class="span1">0</span>
+                                    <br>
+                                    <span>Turned in</span>
+                                </div>
+                                <div class="assign divide">
+                                    <span class="span1">1</span>
+                                    <br>
+                                    <span>Assigned</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="assignment-comment" id="comment" role="tablist" aria-multiselectable="true">
+                        <a (click)="openClassComment()">1 class comment</a>
+                    </div>
+                    <div class="assignment-detail-footer">
+                        <a>View assignment</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
 </section>

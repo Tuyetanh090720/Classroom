@@ -30,34 +30,34 @@
                     <div class="top-menu-bar " *ngIf="classDetail">
                         <nav class="mean-nav ">
                             <ul>
-                                <li class="active ">
-                                    <a href="class-detail/:id">Stream</a>
+                                <li (click)="setStateAsActive('Stream')">
+                                    <a [class.active]="activeState === 'Stream'" [routerLink]="['/class-detail/:id']">Stream</a>
                                 </li>
-                                <li>
-                                    <a href="class-detail/classwork/:id">Classwork</a>
+                                <li (click)="setStateAsActive('Classwork')">
+                                    <a [class.active]="activeState === 'Classwork'" [routerLink]="['/class-detail/classwork/:id']">Classwork</a>
                                 </li>
-                                <li>
-                                    <a href="class-detail/people/:id">People</a>
+                                <li (click)="setStateAsActive('People')">
+                                    <a [class.active]="activeState === 'People'" [routerLink]="['/class-detail/people/:id']">People</a>
                                 </li>
-                                <li>
-                                    <a href="class-detail/grades/:id ">Grades</a>
+                                <li (click)="setStateAsActive('Grades')">
+                                    <a [class.active]="activeState === 'Grades'" [routerLink]="['/class-detail/grades/:id']" *ngIf="(role == 'teacher')">Grades</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 ">
+                <div class=" col-lg-2 col-md-2 col-sm-2 ">
                     <div class="top-right-bar ">
-                        <div id="creation" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideTapCreation($event)">
-                            <a class="btn btn-plus " data-toggle="collapse" href="#collapse1tc" aria-expanded="false" aria-controls="collapse1tc">
+                        <div id="creation" role="tablist " aria-multiselectable="true " (clickOutside)="clickedOutsideTapCreation($event) ">
+                            <a class="btn btn-plus " data-toggle="collapse" href="#collapse1tc" data-target="#collapse1tc" aria-expanded="false" aria-controls="collapse1tc">
                                 <i class="fa fa-plus " *ngIf="!classDetail "></i>
                             </a>
                             <div class="popup-create-class">
                                 <div class="collapse collapse1tc" id="collapse1tc" data-parent="#creation">
-                                    <div class="btnn" (click)="openClassCreation()">
+                                    <div class="btnn " (click)="openClassCreation() " *ngIf="(role == 'teacher')">
                                         <a>Create class</a>
                                     </div>
-                                    <div class="btnn" (click)="openClassJoin()">
+                                    <div class="btnn " (click)="openClassJoin() ">
                                         <a>Join class</a>
                                     </div>
                                 </div>
