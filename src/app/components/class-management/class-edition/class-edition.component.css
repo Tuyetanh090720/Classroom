@@ -1,13 +1,11 @@
 .class-edition {
-    position: fixed;
-    background-color: white;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    min-width: 18rem;
-    max-width: 35rem;
     width: 100%;
-    z-index: 10000;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .popup-edition-block {
@@ -17,6 +15,14 @@
     box-shadow: 1px 0 20px -2px #888;
     z-index: 10000;
     outline: 0;
+    position: fixed;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    min-width: 18rem;
+    max-width: 35rem;
+    width: 100%;
 }
 
 .popup-edition-block .popup-edition {

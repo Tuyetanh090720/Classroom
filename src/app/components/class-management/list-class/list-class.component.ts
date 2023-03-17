@@ -1,4 +1,5 @@
 import { Component, OnInit, Renderer2, ElementRef, HostListener } from '@angular/core';
+import {DataService} from '../../data.service';
 
 @Component({
   selector: 'app-list-class',
@@ -7,14 +8,14 @@ import { Component, OnInit, Renderer2, ElementRef, HostListener } from '@angular
 })
 export class ListClassComponent implements OnInit {
 
-  constructor(private renderer: Renderer2, private el: ElementRef) { }
+  constructor(private renderer: Renderer2, private el: ElementRef,  private data: DataService) { }
 
 
   ngOnInit(): void {
   }
 
   clickedOutsideTapEdition(e: Event) {
-    const show = this.el.nativeElement.querySelector(".collapse.show")
+    const show = this.el.nativeElement.querySelector(".collapse2te.collapse.show")
 
     if(show){
       show.classList.remove('show');

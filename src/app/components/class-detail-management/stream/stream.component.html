@@ -1,0 +1,194 @@
+<app-header></app-header>
+<section class="stream container-stream">
+    <div class="class-information">
+        <div class="class-name">
+            <span>Math</span>
+            <br>
+            <span class="span6 ">Math</span>
+        </div>
+        <div class="class-img">
+            <img src="/assets/images/background.jpg" alt="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="class-code-block">
+                <span>Class code</span>
+                <span class="code">a5tytqp</span>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9">
+            <div class="announcement-edit-area" id="announcement-edit" role="tablist" aria-multiselectable="true">
+                <a class="announcement-edit-area-header" data-toggle="collapse" href="#collapse1edit" aria-expanded="false" aria-controls="collapse1edit">
+                    <div class="avatar-author">
+                        <img src="/assets/images/avatar.jpg" alt="">
+                    </div>
+                    <div class="announcement-edit">
+                        Announcer something to your class
+                    </div>
+                </a>
+                <div class="announcement-edit-block collapse" id="collapse1edit" data-parent="#announcement-edit">
+                    <label>For</label>
+                    <div class="select-block">
+                        <div class="dropdown">
+                            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList">
+                            </ng-multiselect-dropdown>
+                        </div>
+                        <div class="dropdown">
+                            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="dropdownList">
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                    <div class="tinymce">
+                        <editor [init]="{
+                          height: 500,
+                          menubar: false,
+                          plugins: [
+                            'advlist autolink lists link image charmap print preview anchor',
+                            'searchreplace visualblocks code fullscreen',
+                            'insertdatetime media table paste code help wordcount'
+                          ],
+                          toolbar:
+                            'undo redo | formatselect | bold italic backcolor | \
+                            alignleft aligncenter alignright alignjustify | \
+                            bullist numlist outdent indent | removeformat | help'
+                            }">
+                        </editor>
+                        <div class="btn-block">
+                            <button class="btn btn-cancel">Cancel</button>
+                            <button class="btn btn-post"><a href="">Post</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="announcement">
+                <div class="announcement-header">
+                    <div class="announcement-information">
+                        <div class="assignment-icon">
+                            <i class="far fa-file-alt"></i>
+                        </div>
+                        <div class="announcement-assignment-name">
+                            <span>ngo anh posted a new material: asdasdasdad</span>
+                            <br>
+                            <span class="span6">Mar 7</span>
+                        </div>
+                    </div>
+                    <div class="btn-option-edit">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="announcement-assignment-footer" id="comment" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideComment($event)">
+                    <a data-toggle="collapse " href="#collapse1cmt " aria-expanded="false " aria-controls="collapse1cmt ">1 class comment</a>
+                    <div class="comment-block collapse " id="collapse1cmt " data-parent="#comment ">
+                        <div class="comment-block-header ">
+                            Class comments
+                        </div>
+                        <div class="announcement-body ">
+                            <div class="quantity-comment ">
+                                <i class="fas fa-user-friends "></i>
+                                <span>1 lass comment</span>
+                            </div>
+                            <div class="announcement-header ">
+                                <div class="announcement-information ">
+                                    <div class="author-avatar ">
+                                        <img src="/assets/images/avatar.jpg " alt=" ">
+                                    </div>
+                                    <div class="author-name ">
+                                        <span>ngoc anh   </span>
+                                        <span class="span6 ">Mar 7</span>
+                                    </div>
+                                </div>
+                                <div class="btn-option-edit ">
+                                    <i class="fas fa-ellipsis-v "></i>
+                                </div>
+                            </div>
+                            <div class="author-announcement-content ">
+                                okeokeokeoekeokeoe
+                            </div>
+                            <div class="announcement-footer ">
+                                <div class="author-avatar ">
+                                    <img src="/assets/images/avatar.jpg " alt=" ">
+                                </div>
+                                <div class="input-content ">
+                                    <input type="text ">
+                                    <i class="fas fa-paper-plane "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="announcement ">
+                <div class="announcement-header ">
+                    <div class="announcement-information ">
+                        <div class="assignment-icon ">
+                            <i class="far fa-file-alt "></i>
+                        </div>
+                        <div class="announcement-assignment-name ">
+                            <span>ngo anh posted a new material: asdasdasdad</span>
+                            <br>
+                            <span class="span6 ">Mar 7</span>
+                        </div>
+                    </div>
+                    <div class="btn-option-edit ">
+                        <i class="fas fa-ellipsis-v "></i>
+                    </div>
+                </div>
+            </div>
+            <div class="announcement ">
+                <div class="announcement-header-block ">
+                    <div class="announcement-header ">
+                        <div class="announcement-information ">
+                            <div class="author-avatar ">
+                                <img src="/assets/images/avatar.jpg " alt=" ">
+                            </div>
+                            <div class="author-name ">
+                                <span>ngoc anh</span>
+                                <br>
+                                <span class="span6 ">Mar 7</span>
+                            </div>
+                        </div>
+                        <div class="btn-option-edit ">
+                            <i class="fas fa-ellipsis-v "></i>
+                        </div>
+                    </div>
+                    <div class="author-announcement-content ">
+                        okeokeokeoekeokeoe
+                    </div>
+                </div>
+                <div class="announcement-body ">
+                    <div class="quantity-comment ">
+                        <i class="fas fa-user-friends "></i>
+                        <span>1 lass comment</span>
+                    </div>
+                    <div class="announcement-header ">
+                        <div class="announcement-information ">
+                            <div class="author-avatar ">
+                                <img src="/assets/images/avatar.jpg " alt=" ">
+                            </div>
+                            <div class="author-name ">
+                                <span>ngoc anh   </span>
+                                <span class="span6 ">Mar 7</span>
+                            </div>
+                        </div>
+                        <div class="btn-option-edit ">
+                            <i class="fas fa-ellipsis-v "></i>
+                        </div>
+                    </div>
+                    <div class="author-announcement-content ">
+                        okeokeokeoekeokeoe
+                    </div>
+                </div>
+                <div class="announcement-footer ">
+                    <div class="author-avatar ">
+                        <img src="/assets/images/avatar.jpg " alt=" ">
+                    </div>
+                    <div class="input-content ">
+                        <input type="text ">
+                        <i class="fas fa-paper-plane "></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

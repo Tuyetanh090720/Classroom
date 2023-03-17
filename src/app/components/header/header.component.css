@@ -22,14 +22,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px 0;
+    padding: 7px 0;
 }
 
 .header-bar .header-top-bar .top-left-bar .nav-bar-icon {
     left: 0;
     display: block;
     top: 0;
-    width: 100%;
     text-align: center;
     align-items: center;
     padding: 9px 10px 7px 10px;
@@ -43,7 +42,7 @@
 
 .header-bar .header-top-bar .top-left-bar .nav-bar-icon:hover {
     border-radius: 20px;
-    background-color: #e0e0e0;
+    background-color: rgb(224, 224, 224, 0.4);
 }
 
 .header-bar .header-top-bar .top-left-bar .logo-google {
@@ -64,8 +63,27 @@
     top: 2px;
 }
 
+.header-bar .header-top-bar .top-left-bar .class-name-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+
+.header-bar .header-top-bar .top-left-bar .class-name-block .class-block-header-a {
+    color: #5f6368;
+}
+
+.header-bar .header-top-bar .top-left-bar .class-name-block .class-block-header-a .spanh6 {
+    font-size: 11px;
+}
+
 .header-bar .header-top-bar .top-menu-bar {
     text-align: center;
+}
+
+.header-bar .header-top-bar .top-menu-bar nav ul {
+    margin-bottom: 0 !important;
 }
 
 .header-bar .header-top-bar .top-menu-bar nav ul li {
@@ -83,7 +101,7 @@
 }
 
 .header-bar .header-top-bar .top-menu-bar nav>ul>li:hover {
-    background-color: #e0e0e0;
+    background-color: rgb(224, 224, 224, 0.4);
 }
 
 .header-bar .header-top-bar .top-menu-bar nav>ul>li>a {
@@ -131,7 +149,7 @@
     right: 0;
     top: 100%;
     background-color: white;
-    border: 1 solid #dadce0;
+    border: 1px solid #dadce0;
     box-shadow: 1px 0 10px -2px #888;
 }
 

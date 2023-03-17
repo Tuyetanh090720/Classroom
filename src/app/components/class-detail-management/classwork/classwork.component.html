@@ -1,0 +1,123 @@
+<app-header></app-header>
+<section class="classwork container">
+    <div class="row">
+        <div class="col-lg-3 col-md-12 col-sm-12">
+            <div>
+                <div class="col">
+                    <div ngbDropdown class="d-inline-block topic-block">
+                        <button type="button" class="btn btn-dropdown" id="dropdownBasic1" ngbDropdownToggle>
+                          Actions
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button ngbDropdownItem>Email</button>
+                            <button ngbDropdownItem>Remove</button>
+                            <button ngbDropdownItem>Mute</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-12 col-sm-12">
+            <div class="btn-btn-create" id="assigment-option" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentOptionBlock($event)">
+                <a data-toggle="collapse" href="#collapse1ao" aria-expanded="false" aria-controls="collapse1ao">
+                    <i class="fas fa-plus"></i>
+                    <span>Create</span>
+                </a>
+                <div class="assignment-option-block collapse" id="collapse1ao" data-parent="#assigment-option" (clickOutside)="clickedOutsideAssignmentCreationBlock($event)">
+                    <div class="assignment-option" id="assigment-creation" role="tablist" aria-multiselectable="true">
+                        <a [routerLink]="['/class-detail/classwork/:id/creation']" routerLinkActive="active">
+                            <i class="far fa-file-alt"></i>
+                            <span>Assignment</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="assigment" id="assigment" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideAssignmentDetail($event)">
+                <div class="assignment-header">
+                    <a data-toggle="collapse" href="#collapse1ad" aria-expanded="false" aria-controls="collapse1ad">
+                        <div class="assignment-name">
+                            <div class="assignment-icon">
+                                <i class="far fa-file-alt"></i>
+                            </div>
+                            <span>asdasdasdad</span>
+                        </div>
+                        <div class="right-block">
+                            <span class="span6"> Posted Mar 7</span>
+                        </div>
+                    </a>
+                    <div class="btn-option-edit" id="btn-option-edit" role="tablist" aria-multiselectable="true">
+                        <a data-toggle="collapse" href="#collapse1te" aria-expanded="false" aria-controls="collapse1te">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="tap-edition collapse" id="collapse1te" data-parent="#btn-option-edit" (clickOutside)="clickedOutsideAssignmentEditionBlock($event)">
+                            <a [routerLink]="['/class-detail/classwork/:id/edition']" routerLinkActive="active">
+                                <span>Edit</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="assignment-detail collapse" id="collapse1ad" data-parent="#assigment">
+                    <div class="assignment-detail-body">
+                        <div class="post-date">
+                            Posted Mar 7
+                        </div>
+                        <div class="assignment-content">
+                            <div>asdsdfwfuwh</div>
+                            <div class="turnin-assign">
+                                <div class="turnin divide">
+                                    <span class="span1">0</span>
+                                    <br>
+                                    <span>Turned in</span>
+                                </div>
+                                <div class="assign divide">
+                                    <span class="span1">1</span>
+                                    <br>
+                                    <span>Assigned</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="assignment-comment" id="comment" role="tablist" aria-multiselectable="true">
+                        <a data-toggle="collapse" href="#collapse1cmt" aria-expanded="false" aria-controls="collapse1cmt">1 class comment</a>
+                        <div class="comment-block collapse" id="collapse1cmt" data-parent="#comment">
+                            <div class="assignment-body">
+                                <div class="quantity-comment">
+                                    <span>Class comment</span>
+                                </div>
+                                <div class="comment-block-header">
+                                    <div class="comment-block-information">
+                                        <div class="author-avatar">
+                                            <img src="/assets/images/avatar.jpg" alt="">
+                                        </div>
+                                        <div class="author-name">
+                                            <span>ngoc anh   </span>
+                                            <span class="span6">Mar 7</span>
+                                        </div>
+                                    </div>
+                                    <div class="btn-option-edit">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </div>
+                                </div>
+                                <div class="author-assignment-content">
+                                    okeokeokeoekeokeoe
+                                </div>
+                                <div class="comment-block-footer">
+                                    <div class="author-avatar">
+                                        <img src="/assets/images/avatar.jpg" alt="">
+                                    </div>
+                                    <div class="input-content">
+                                        <input type="text">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="assignment-detail-footer">
+                        <a>View assignment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -20,6 +20,8 @@ export class ClassCreationComponent implements OnInit {
   showCreation(){
     this.popupCreation = true;
 
+    console.log("show creation")
+
     const popup= this.el.nativeElement.querySelector(".popup-creation-question")
     popup.style.display = "none"
   }

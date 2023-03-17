@@ -2,36 +2,45 @@
     <div class="header-bar">
         <div>
             <div class="row header-top-bar">
-                <div class="col-lg-2 col-md-2 col-sm-2">
+                <div class="col-lg-3 col-md-3 col-sm-2">
                     <div class="top-left-bar">
                         <div class="nav-bar-icon" id="nav-bar-icon" (clickOutside)="clickedOutsideMenu($event)" (click)=" showMainMenu() ">
                             <a>
                                 <i class="fa fa-bars "></i>
                             </a>
                         </div>
-                        <div class="logo-google ">
+                        <div class="logo-google " *ngIf="!classDetail">
                             <a href=" ">
                                 <img src="assets/images/logo-google.png " alt="Google ">
                             </a>
                             <span>Classroom</span>
                         </div>
+                        <div class="class-name-block " *ngIf="classDetail">
+                            <a href=" " class="class-block-header-a ">
+                                <div class="class-name ">
+                                    <span>Math</span>
+                                    <br>
+                                    <span class="spanh6 ">Math</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 ">
+                <div class="col-lg-7 col-md-7 col-sm-7 ">
                     <div class="top-menu-bar " *ngIf="classDetail">
                         <nav class="mean-nav ">
                             <ul>
                                 <li class="active ">
-                                    <a href=" ">Stream</a>
+                                    <a href="class-detail/:id">Stream</a>
                                 </li>
                                 <li>
-                                    <a href=" ">Classwork</a>
+                                    <a href="class-detail/classwork/:id">Classwork</a>
                                 </li>
                                 <li>
-                                    <a href=" ">People</a>
+                                    <a href="class-detail/people/:id">People</a>
                                 </li>
                                 <li>
-                                    <a href=" ">Grades</a>
+                                    <a href="class-detail/grades/:id ">Grades</a>
                                 </li>
                             </ul>
                         </nav>
@@ -41,25 +50,31 @@
                     <div class="top-right-bar ">
                         <div id="creation" role="tablist" aria-multiselectable="true" (clickOutside)="clickedOutsideTapCreation($event)">
                             <a class="btn btn-plus " data-toggle="collapse" href="#collapse1tc" aria-expanded="false" aria-controls="collapse1tc">
-                                <i class="fa fa-plus "></i>
+                                <i class="fa fa-plus " *ngIf="!classDetail "></i>
                             </a>
                             <div class="popup-create-class">
-                                <div class="collapse" id="collapse1tc" data-parent="#creation">
-                                    <div class="btnn" (click)="showTapCreate()">
+                                <div class="collapse collapse1tc" id="collapse1tc" data-parent="#creation">
+                                    <!-- <div class="btnn">
                                         <a data-toggle="collapse" href="#collapse1c" aria-expanded="false" aria-controls="collapse1c">
-                                      Create class
-                                    </a>
+                                          Create class
+                                        </a>
+                                    </div> -->
+                                    <div class="btnn">
+                                        <a>Creation</a>
                                     </div>
                                     <div class="btnn">
-                                        <a>
-                                        Join class
-                                      </a>
+                                        <a data-toggle="collapse" href="#collapse1j" aria-expanded="false" aria-controls="collapse1j">
+                                          Join class
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="collapse" id="collapse1c" data-parent="#collapse1tc">
-                                    <app-class-creation></app-class-creation>
-                                </div>
                             </div>
+                            <!-- <div class="collapse" id="collapse1c" data-parent="#collapse1tc">
+                                <app-class-creation></app-class-creation>
+                            </div>
+                            <div class="collapse" id="collapse1j" data-parent="#collapse1tc">
+                                <app-class-join></app-class-join>
+                            </div> -->
                         </div>
                         <div class="btn btn-setting " *ngIf="classDetail ">
                             <i class="fa fa-cog "></i>

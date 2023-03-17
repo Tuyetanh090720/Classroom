@@ -1,0 +1,138 @@
+.assignment-creation {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    background-color: #f8f9fa;
+}
+
+.assignment-creation .assignment-creation-header {
+    border-bottom: 1px solid #dadce0;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 30px;
+    justify-content: space-between;
+    align-items: center;
+    color: #5f6368;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    z-index: 1000000;
+    position: relative;
+    background-color: #fff;
+}
+
+.assignment-creation .assignment-creation-header a {
+    color: #5f6368;
+}
+
+.assignment-creation .assignment-creation-header a .fa-times {
+    padding: 15px;
+}
+
+.assignment-creation .assignment-creation-header .fa-times:hover {
+    background-color: rgb(224, 224, 224, 0.4);
+    border-radius: 20px;
+    color: #5f6368
+}
+
+.btn-cancel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.title-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.title-block i {
+    background-color: rgb(184, 6, 114, 0.5);
+    padding: 10px 12px;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.assignment-creation .assignment-creation-header span {
+    padding-left: 10px;
+}
+
+.assignment-creation .assignment-creation-header button {
+    outline: 0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #5f6368;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.assignment-creation-option-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    z-index: 100000;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+}
+
+.option-bar {
+    top: 120px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+.option-bar .select-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.dropdown {
+    width: 200px;
+    padding-right: 20px;
+}
+
+input {
+    border: 1px solid #e0e0e0;
+    height: 40px;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.assignment-creation-body {
+    width: 100%;
+    max-width: 60rem;
+    margin: auto;
+    top: 50px;
+    position: relative;
+    border: 1px solid #e0e0e0;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.assignment-creation-body input {
+    width: 100%;
+    border: none;
+    height: 50px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-bottom: 1px solid #5f6368;
+    margin-bottom: 20px;
+}
